@@ -40,7 +40,7 @@ public class KarArtifactInstaller implements ArtifactInstaller {
 
 	public void install(File file) throws Exception {
         // check if the KAR is not already installed
-        if (karService.list().contains(file.getName())) {
+        if (karService.list().contains(getKarName(file))) {
             LOGGER.info("KAR {} is already installed. Please uninstall it first.", file.getName());
             return;
         }
